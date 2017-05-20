@@ -8,8 +8,21 @@
 //
 // See HW4 writeup for more hints and details.
 class MusicScreen {
-  constructor() {
-    // TODO(you): Implement the constructor and add fields as necessary.
+  constructor(notifyFinishedPreload) {
+    this.setSong = this.setSong.bind(this);
+    this.audioPlayer = new AudioPlayer();
+    this.playButton = new PlayButton(this.audioPlayer);
+    this.notifyFinishedPreload = notifyFinishedPreload;
   }
-  // TODO(you): Add methods as necessary.
+
+  setSong(songURL) {
+    this.audioPlayer.setSong(songURL);
+    this.audioPlayer.setKickCallback(this.gifDisplay.loadGif);
+    this.audioPlayer.play();
+  }
+
+  setGifs(gifData) {
+    this.gifDisplay = new GifDisplay(gifData, this.notifyFinishedPreload);
+    this.gifDisplay.preload();
+  }
 }

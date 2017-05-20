@@ -34,12 +34,24 @@
           <input type="text" id="query-input" placeholder="Enter a word or phrase" />
           <div id="error" class="inactive">Not enough gifs for this theme. Please try another.</div>
 
-          <input type="submit" value="Go" />
+          <input id = "submit-button" type="submit" value="Go"  />
         </form>
       </fieldset>
     </div>
 
-    <!-- TODO(you): Add the HTML necessary to complete the assignment! -->
+    <div id = "load" class = "inactive">
+      Loading...
+    </div>
+
+    <div id = "music" class = "inactive">
+      <div id = "gif-container">
+        <div class = "gif"> </div>
+        <div class = "gif"> </div>
+      </div>
+      <div id = "control-bar">
+        <img id = "play-button" src="images/pause.png">
+      </div>
+    </div>
 
   </body>
 </html>
